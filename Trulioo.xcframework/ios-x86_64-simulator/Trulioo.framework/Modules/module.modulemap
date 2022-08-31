@@ -1,0 +1,11 @@
+framework module Trulioo {
+  umbrella header "Trulioo.h"
+
+  export *
+  module * { export * }
+}
+
+module Trulioo.Swift {
+    header "Trulioo-Swift.h"
+    requires objc
+}

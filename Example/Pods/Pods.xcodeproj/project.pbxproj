@@ -3,11 +3,12 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 52;
 	objects = {
 
 /* Begin PBXBuildFile section */
 		2459605A28BFBDFA008EB2AB /* BlinkingLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2459605928BFBDFA008EB2AB /* BlinkingLabel.swift */; };
+		2459605D28BFCF4F008EB2AB /* Trulioo.xcframework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2459605C28BFCF4F008EB2AB /* Trulioo.xcframework */; };
 		3F7AF4AC4943EB876EE87A52370770A5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 73010CC983E3809BECEE5348DA1BB8C6 /* Foundation.framework */; };
 		531044B394269273BE0B7C598F77D411 /* Pods-BlinkingLabel_Example-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 51A54FBF726A4D2BD02C869578EE0C6E /* Pods-BlinkingLabel_Example-dummy.m */; };
 		651EBB88E916918A8E6A25D2D1DAD399 /* Pods-BlinkingLabel_Example-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 8E74E12A391797F1093EDAA701301C36 /* Pods-BlinkingLabel_Example-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -41,6 +42,7 @@
 		1FF693AEFF9490C9FEC931CEB052AAE2 /* BlinkingLabel.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = BlinkingLabel.modulemap; sourceTree = "<group>"; };
 		23C715FC5FE185B6B2B462F5C2FB0149 /* Pods-BlinkingLabel_Tests-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-BlinkingLabel_Tests-dummy.m"; sourceTree = "<group>"; };
 		2459605928BFBDFA008EB2AB /* BlinkingLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BlinkingLabel.swift; sourceTree = "<group>"; };
+		2459605C28BFCF4F008EB2AB /* Trulioo.xcframework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcframework; name = Trulioo.xcframework; path = ../../Trulioo.xcframework; sourceTree = "<group>"; };
 		3343A73D42315D5983C65A3C6DE7C6E0 /* Pods-BlinkingLabel_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlinkingLabel_Example.release.xcconfig"; sourceTree = "<group>"; };
 		3528312938F86B0E4457C5D997C7ED65 /* BlinkingLabel-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "BlinkingLabel-dummy.m"; sourceTree = "<group>"; };
 		35CFEE9A6E843A5E8B9860B86BE1453E /* Pods-BlinkingLabel_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-BlinkingLabel_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -77,6 +79,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2459605D28BFCF4F008EB2AB /* Trulioo.xcframework in Frameworks */,
 				3F7AF4AC4943EB876EE87A52370770A5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,6 +110,14 @@
 				D0E1093E9B5276B0FB5D8D32B4340582 /* Pods-BlinkingLabel_Tests */,
 			);
 			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		2459605B28BFC374008EB2AB /* trulioo */ = {
+			isa = PBXGroup;
+			children = (
+				2459605C28BFCF4F008EB2AB /* Trulioo.xcframework */,
+			);
+			name = trulioo;
 			sourceTree = "<group>";
 		};
 		578452D2E740E91742655AC8F1636D1F /* iOS */ = {
@@ -218,6 +229,7 @@
 		D210D550F4EA176C3123ED886F8F87F5 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				2459605B28BFC374008EB2AB /* trulioo */,
 				578452D2E740E91742655AC8F1636D1F /* iOS */,
 			);
 			name = Frameworks;
@@ -428,7 +440,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-BlinkingLabel_Tests/Pods-BlinkingLabel_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlinkingLabel_Tests/Pods-BlinkingLabel_Tests.modulemap";
 				OTHER_LDFLAGS = "";
@@ -462,7 +478,11 @@
 				INFOPLIST_FILE = "Target Support Files/BlinkingLabel/BlinkingLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/BlinkingLabel/BlinkingLabel.modulemap";
 				PRODUCT_MODULE_NAME = BlinkingLabel;
 				PRODUCT_NAME = BlinkingLabel;
@@ -494,7 +514,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-BlinkingLabel_Example/Pods-BlinkingLabel_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlinkingLabel_Example/Pods-BlinkingLabel_Example.modulemap";
 				OTHER_LDFLAGS = "";
@@ -566,7 +590,8 @@
 				MTL_FAST_MATH = YES;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				STRIP_INSTALLED_PRODUCT = NO;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				SWIFT_VERSION = 5.0;
 				SYMROOT = "${SRCROOT}/../build";
 			};
@@ -590,7 +615,11 @@
 				INFOPLIST_FILE = "Target Support Files/BlinkingLabel/BlinkingLabel-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MODULEMAP_FILE = "Target Support Files/BlinkingLabel/BlinkingLabel.modulemap";
 				PRODUCT_MODULE_NAME = BlinkingLabel;
 				PRODUCT_NAME = BlinkingLabel;
@@ -622,7 +651,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-BlinkingLabel_Example/Pods-BlinkingLabel_Example-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlinkingLabel_Example/Pods-BlinkingLabel_Example.modulemap";
 				OTHER_LDFLAGS = "";
@@ -655,7 +688,11 @@
 				INFOPLIST_FILE = "Target Support Files/Pods-BlinkingLabel_Tests/Pods-BlinkingLabel_Tests-Info.plist";
 				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-BlinkingLabel_Tests/Pods-BlinkingLabel_Tests.modulemap";
 				OTHER_LDFLAGS = "";

@@ -1,0 +1,41 @@
+// swift-interface-format-version: 1.0
+// swift-compiler-version: Apple Swift version 5.6.1 (swiftlang-5.6.0.323.66 clang-1316.0.20.12)
+// swift-module-flags: -target x86_64-apple-ios14.0-simulator -enable-objc-interop -enable-library-evolution -swift-version 5 -enforce-exclusivity=checked -module-name Trulioo
+import AVFoundation
+import Foundation
+import Lottie
+import QuartzCore
+import Swift
+import SwiftUI
+@_exported import Trulioo
+import _Concurrency
+import core
+import os.log
+import os
+public protocol TruliooDelegate {
+  func onError(error: Trulioo.Error)
+  func onException(exception: Trulioo.Exception)
+  func onComplete(result: Trulioo.Success)
+}
+public protocol TruliooResult {
+}
+public struct Success : Trulioo.TruliooResult {
+  public let sessionId: Swift.String
+}
+public struct Error : Trulioo.TruliooResult {
+  public let message: Swift.String
+  public let code: Swift.Int32
+  public let sessionId: Swift.String?
+}
+public struct Exception : Trulioo.TruliooResult {
+  public let message: Swift.String
+}
+public struct TruliooWorkflow {
+  public init(_ license: Swift.String)
+  public let license: Swift.String
+}
+public class TruliooSDK {
+  public init()
+  public func launch(delegate: Trulioo.TruliooDelegate, workflow: Trulioo.TruliooWorkflow)
+  @objc deinit
+}
